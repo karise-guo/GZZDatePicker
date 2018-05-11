@@ -1,26 +1,64 @@
 # GZZDatePicker
 
-> 因为苹果自带的 `UIDatePicker` 只能选择 `年月日` ，还不能自定义，所以就使用 `UIPickerView` 自定义了日期选择框。
+A simple custom DatePicker (一个简单的自定义日期选择控件)
 
-## 有这几种类型
+# Description
+
+* 支持年数滑到底部自动加载更多
+* 支持循环滑动选择
+
+# Type
 
 ```
 // MARK: - 日期选择类型
 enum GZZDatePickerType: Int {
-
-    case year // 年
-    case month // 年月
-    case day // 年月日
-    case time // 年月日时分
+    case year   // 年
+    case month  // 年月
+    case day    // 年月日
+    case time   // 年月日时分
 }
 ```
 
-## 效果图
+# Usage
 
-![年.png](http://upload-images.jianshu.io/upload_images/1930874-8ebfff49b1678735.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+```
+let datePicker = GZZDatePicker(.year)
+datePicker.show()
+```
 
-![年月.png](http://upload-images.jianshu.io/upload_images/1930874-7156a99d0e176a19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+# Methods
 
-![年月日.png](http://upload-images.jianshu.io/upload_images/1930874-45aa166cdbac9153.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+```
+/// 设置日期选择类型（默认 .month）
+public func setType(_ type: GZZDatePickerType)
+    
+/// 设置最小日期（默认不限制）
+public func setMinDate(_ date: Date?)
+    
+/// 设置最大日期（默认不限制）
+public func setMaxDate(_ date: Date?)
+    
+/// 获取最小日期
+public func getMinDate() -> Date?
+    
+/// 获取最大日期
+public func getMaxDate() -> Date?
+    
+/// 设置选中日期（默认当前时间）
+public func setSelectedDate(_ date: Date)
+    
+/// 获取选中日期
+public func getSelectedDate() -> Date
+```
 
-![日期小时分钟.png](http://upload-images.jianshu.io/upload_images/1930874-62d78cad159755c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+# Screenshots
+
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fr78wxgzz4j30yi1pcn2s.jpg)
+
+![](https://ws1.sinaimg.cn/large/006tNc79gy1fr78x1um3vj30yi1pcwkn.jpg)
+
+![](https://ws3.sinaimg.cn/large/006tNc79gy1fr78x60scoj30yi1pcjxu.jpg)
+
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fr78x9hxdfj30yi1pcq9x.jpg)
+
+
